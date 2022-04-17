@@ -1,0 +1,76 @@
+body {
+    // background-color: #f8f9fa;
+    // background-color: #f0f2f5!important;
+    background: #f2f6fc;
+}
+
+#mainNav {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: #fff;
+}
+
+.shadow-sm {
+    box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%) !important;
+}
+
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+.masthead {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.myCard {
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075)!important;
+    background-color: white;
+
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid #e3e6f0;
+
+
+    .card-header, .header {
+        padding: 1rem 1.35rem;
+        margin-bottom: 0;
+        background-color: #21283208;
+        border-bottom: 1px solid rgba(33,40,50,.125);
+        font-weight: 500;
+    }
+    .body {
+        flex: 1 1 auto;
+        padding: 1rem;
+
+        .micons {
+            .device_online {
+                color: green;
+            }
+            .device_offline {
+                color: red;
+            }
+            a {
+                color: #a7aeb8;
+                &:hover {
+                    color: #0061f2;
+                }
+            }
+        }
+    }
+    .title {
+        color: #585858;
+        margin: 0 0 32px;
+        overflow: hidden;
+        position: relative;
+        font-weight: bold;
+        border-bottom: 2px solid #3498db;
+        // border-bottom: 1px solid rgba(0,0,0,.125);
+        background-color: rgba(0,0,0,.1);
+    }
+}
