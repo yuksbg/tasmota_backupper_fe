@@ -9,9 +9,10 @@
             <div class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"></div>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
               <li>
-                <a class="dropdown-item" v-on:click.prevent="getData()" href="#"><font-awesome-icon :icon="['fas', 'rotate']" /> Reload data</a>
+                <a class="dropdown-item" v-on:click.prevent="getData()" href="#"><font-awesome-icon :icon="['fas', 'rotate']" />&nbsp;Reload data</a>
               </li>
-              <li><router-link class="dropdown-item" :to='{name:"findNew"}'>Find new devices</router-link></li>
+              <li><router-link class="dropdown-item" :to='{name:"findNew"}'><font-awesome-icon :icon="['fas', 'magnifying-glass']" />&nbsp;Find new devices</router-link></li>
+              <li><a class="dropdown-item" href="#" v-on:click.prevent="backupAll()"><font-awesome-icon :icon="['fas', 'cloud-arrow-down']" />&nbsp;Backup All</a></li>
             </ul>
           </div>
         </div>
@@ -76,6 +77,13 @@ import * as timeago from 'timeago.js';
 export default defineComponent({
   name: "HomeView",
   methods: {
+    backupAll: function(){
+      fetch("/api/backup/all",{
+        method:"POST"
+      }).then(()=>{
+        this.getData()
+      })
+    },
     getExternalLink:(ip:string) => {
       return "http://"+ip
     },
